@@ -1,0 +1,226 @@
+@use "../../scss/index.scss" as *;
+header {
+    height: 8.2rem;
+    background: transparent;
+    &.wrap {
+        padding: 0 2.4rem;
+        position: relative;
+    }
+    @include flex(center, space-between);
+    .logo:hover {
+        opacity: 0.8;
+    }
+    .logo:active {
+        opacity: 0.4;
+    }
+    .menu-hamburger {
+        .icon {
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.4;
+            }
+        }
+        &.close {
+            position: absolute;
+            top: 3rem;
+            right: 2.4rem;
+        }
+    }
+    .navbar {
+        display: none;
+        gap: 3.2rem;
+        text-align: start;
+        &.active {
+            @include flex(flex-start, center);
+            flex-direction: column;
+            position: absolute;
+            height: 100vh;
+            width: 70vw !important;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-backdrop-filter: blur(3rem);
+            backdrop-filter: blur(3rem);
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+        li {
+            display: flex;
+            width: 100%;
+            // border-right: 0.5rem solid black;
+            letter-spacing: 0.27rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            a {
+                display: inline-block;
+                width: 100%;
+                color: $text-color;
+                span {
+                    color: $text-color;
+                    margin-right: 1rem;
+                    margin-left: 3rem;
+                }
+                &.active {
+                    border-right: 0.5rem solid $text-color;
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    header {
+        height: 6rem;
+        &.wrap {
+            padding: 0 4rem;
+            position: relative;
+        }
+        @include flex(center, space-between);
+        .logo:hover {
+            opacity: 0.8;
+        }
+        .logo:active {
+            opacity: 0.4;
+        }
+        .menu-hamburger {
+            display: none;
+            &.close {
+                display: none;
+            }
+        }
+        .navbar {
+            @include flex(center, space-between);
+            width: 59vw !important;
+            height: 6rem;
+            flex-direction: row;
+            background-color: rgba(255, 255, 255, 0.04);
+            li {
+                display: flex;
+                width: unset;
+                // border-right: 0.5rem solid black;
+                font-size: 0.88rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                a {
+                    position: relative;
+                    display: inline-block;
+                    // color: $text-color;
+                    padding: 0;
+                    line-height: 5.5rem;
+                    width: unset;
+                    letter-spacing: 0.236rem;
+                    text-transform: uppercase;
+                    border-right: unset !important;
+                    span {
+                        display: none;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        height: 0.4rem;
+                        width: 0;
+                        top: 100%;
+                        right: 0;
+                        background-color: black;
+                    }
+                    &.active::before {
+                        width: 100%;
+                    }
+                    &:hover::before {
+                        opacity: 0.8;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktopMd {
+    header {
+        margin-top: 2.25rem;
+        &.wrap {
+            padding: 0 0 0 4rem;
+            position: relative;
+        }
+        @include flex(center, space-between);
+        .logo {
+            position: relative;
+            .logo:hover {
+                opacity: 0.8;
+            }
+            .logo:active {
+                opacity: 0.4;
+            }
+        }
+        .menu-hamburger {
+            display: none;
+            &.close {
+                display: none;
+            }
+        }
+        .line {
+            border-top: 1px solid #383b4b;
+            width: 47.4rem;
+            margin-top: 3rem;
+            position: absolute;
+            left: 9rem;
+            top: 0;
+        }
+        .navbar {
+            @include flex(center, center);
+            width: 59vw !important;
+            height: 6rem;
+            flex-direction: row;
+            background: #ffffff05;
+            li {
+                display: flex;
+                width: unset;
+                // border-right: 0.5rem solid black;
+                font-size: 0.88rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                a {
+                    position: relative;
+                    display: inline-block;
+                    color: $text-color;
+                    padding: 0;
+                    line-height: 5.5rem;
+                    width: unset;
+                    letter-spacing: 0.236rem;
+                    text-transform: uppercase;
+                    border-right: unset !important;
+                    span {
+                        // color: $text-color;
+                        display: inline-block;
+                        margin-right: 1rem;
+                        margin-left: 0;
+                        font-weight: 700;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        height: 0.4rem;
+                        width: 0;
+                        top: 100%;
+                        right: 0;
+                        background-color: black;
+                    }
+                    &.active::before {
+                        width: 100%;
+                    }
+                    &:hover::before {
+                        opacity: 0.8;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

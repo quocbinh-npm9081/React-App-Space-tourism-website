@@ -1,8 +1,8 @@
 import React from 'react';
 import './homePage.scss';
 function HomePage() {
-    return <div>
-
+    return <div className='homePage'>
+        HomePage
     </div>;
 }
 

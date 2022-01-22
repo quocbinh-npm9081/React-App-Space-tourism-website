@@ -1,0 +1,56 @@
+@use "./scss/index.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700&family=Bellefair&display=swap");
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-primary;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 15rem;
+    font-family: $font-title;
+}
+
+h2 {
+    font-size: 10rem;
+    font-family: $font-title;
+}
+
+h3 {
+    font-size: 5.6rem;
+    font-family: $font-title;
+}
+
+h4 {
+    font-size: 3.2rem;
+    font-family: $font-title;
+}
+
+h5 {
+    font-size: 2.8rem;
+    white-space: 4.75;
+}
+
+.subheading1 {
+    font-size: 2.8rem;
+}
+
+.subheading2 {
+    font-size: 1.4rem;
+    white-space: 2.35;
+}
+
+.navText {
+    font-size: 1.4rem;
+    white-space: 2.7;
+}
