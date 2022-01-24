@@ -33,6 +33,7 @@ header {
         display: none;
         gap: 3.2rem;
         text-align: start;
+        transition: all 0.3s ease-in-out;
         &.active {
             @include flex(flex-start, center);
             flex-direction: column;
@@ -78,7 +79,7 @@ header {
     header {
         height: 6rem;
         &.wrap {
-            padding: 0 4rem;
+            padding: 0 0 0 4rem;
             position: relative;
         }
         @include flex(center, space-between);
@@ -95,7 +96,7 @@ header {
             }
         }
         .navbar {
-            @include flex(center, space-between);
+            @include flex(center, center);
             width: 59vw !important;
             height: 6rem;
             flex-direction: row;
@@ -103,10 +104,10 @@ header {
             li {
                 display: flex;
                 width: unset;
-                // border-right: 0.5rem solid black;
                 font-size: 0.88rem;
                 font-weight: 400;
                 text-transform: uppercase;
+                padding: 0 1rem;
                 a {
                     position: relative;
                     display: inline-block;
@@ -127,7 +128,7 @@ header {
                         width: 0;
                         top: 100%;
                         right: 0;
-                        background-color: black;
+                        background-color: $text-color;
                     }
                     &.active::before {
                         width: 100%;
@@ -210,7 +211,7 @@ header {
                         width: 0;
                         top: 100%;
                         right: 0;
-                        background-color: black;
+                        background-color: $text-color;
                     }
                     &.active::before {
                         width: 100%;

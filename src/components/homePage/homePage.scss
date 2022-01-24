@@ -6,3 +6,162 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.homePage {
+    @include flex(center,
+    center);
+    flex-direction: column;
+    color: $text-color;
+    .content {
+        text-align: center;
+        .pharse {
+            font-weight: 400;
+            font-size: 1.6rem;
+            letter-spacing: 0.27rem;
+            margin-top: 4.8rem;
+        }
+        .title {
+            font-family: "Bellefair", serif;
+            color: $text-color;
+            font-weight: 400;
+            font-size: 8rem;
+            line-height: 10rem;
+            margin: 1.6rem 0;
+            text-transform: uppercase;
+        }
+        .description {
+            font-weight: 100;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            margin-top: 4.8rem;
+            text-transform: none;
+            max-width: 32.1rem;
+        }
+    }
+    .btn-explore {
+        font-family: "Bellefair", serif;
+        min-height: 15rem;
+        min-width: 15rem;
+        background-color: $text-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: none;
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 2.3rem;
+        letter-spacing: 0.125rem;
+        margin-top: 8.1rem;
+        transition: all 0.2s ease;
+        &:hover {
+            outline: 3.5rem rgba(255, 255, 255, 0.3) solid;
+        }
+        &:active {
+            opacity: 0.4;
+        }
+    }
+}
+
+@include tablet {
+    body {
+        background-image: url("../../public/assets/home/background-home-tablet.jpg");
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+    }
+    .homePage {
+        .content {
+            text-align: center;
+            .pharse {
+                font-weight: 100;
+                font-size: 2.6rem;
+                letter-spacing: 0.27rem;
+                margin-top: 10.8rem;
+                margin-bottom: 5rem;
+            }
+            .title {
+                font-family: "Bellefair", serif;
+                color: $text-color;
+                font-weight: 400;
+                font-size: 15rem;
+                line-height: 10rem;
+                margin: 1.6rem 0;
+                text-transform: uppercase;
+            }
+            .description {
+                font-weight: 100;
+                font-size: 2rem;
+                line-height: 3.5rem;
+                margin-top: 4.8rem;
+                text-transform: none;
+                max-width: 45rem;
+            }
+        }
+        .btn-explore {
+            min-height: 24.2rem;
+            min-width: 24.2rem;
+            &:hover {
+                outline: 6.5rem rgba(255, 255, 255, 0.3) solid;
+            }
+        }
+    }
+}
+
+@include desktopMd {
+    body {
+        background-image: url("../../public/assets/home/background-home-desktop.jpg");
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+    }
+    .homePage {
+        @include flex(flex-end,
+        space-between);
+        flex-direction: row;
+        color: $text-color;
+        padding: 0 20rem;
+        .content {
+            text-align: start;
+            .pharse {
+                font-weight: 400;
+                font-size: 2.6rem;
+                letter-spacing: 0.27rem;
+                margin-top: 4.8rem;
+            }
+            .title {
+                font-family: "Bellefair", serif;
+                color: $text-color;
+                font-weight: 400;
+                font-size: 10rem;
+                line-height: 10rem;
+                margin: 1.6rem 0;
+                text-transform: uppercase;
+            }
+            .description {
+                font-weight: 100;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                margin-top: 4.8rem;
+                text-transform: none;
+                max-width: 28.7rem;
+            }
+        }
+        .btn-explore {
+            min-height: 20rem;
+            min-width: 20rem;
+            font-size: 2rem;
+            margin-right: 9rem;
+            margin-top: 20rem;
+            &:hover {
+                outline: 5.5rem rgba(255, 255, 255, 0.3) solid;
+            }
+            &:active {
+                opacity: 0.4;
+            }
+        }
+    }
+}
