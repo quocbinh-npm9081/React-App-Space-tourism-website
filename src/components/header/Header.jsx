@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
 
 import dataHeader from './Data';
-import logo from '../../public/assets/shared/logo.svg';
-import menuHamburger from '../../public/assets/shared/icon-hamburger.svg';
-import menuClose from '../../public/assets/shared/icon-close.svg';
+import logo from '/assets/shared/logo.svg';
+import menuHamburger from '/assets/shared/icon-hamburger.svg';
+import menuClose from '/assets/shared/icon-close.svg';
 
 function Header() {
 
