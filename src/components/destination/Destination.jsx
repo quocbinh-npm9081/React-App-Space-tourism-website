@@ -17,7 +17,7 @@ import data from '../../config/data.json';
 //     )
 // }
 
-const HeroSilde = ({ stt, title }) => {
+const HeroSilde = () => {
 
 
     const [slides, setSlides] = useState([]);

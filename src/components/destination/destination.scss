@@ -30,8 +30,18 @@ body.bg-destination {
         background-color: transparent;
         opacity: unset;
     }
+    img {
+        width: 100%;
+        transform: scale(0);
+        transition: all 2.88s ease;
+    }
     .swiper-pagination-bullet-active {
         border-bottom: 0.2rem solid #ffff;
+    }
+    .swiper-slide-active {
+        &>.image>img {
+            transform: scale(1);
+        }
     }
     .pharse,
     .title,
@@ -74,9 +84,6 @@ body.bg-destination {
     .image {
         width: 17rem;
         margin: 0 auto;
-    }
-    img {
-        width: 100%;
     }
 }
 
