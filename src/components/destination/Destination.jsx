@@ -33,7 +33,7 @@ const HeroSilde = () => {
     return (
         <div className="hero-slide">
             <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-                speed={600}
+                speed={240}
                 parallax={true}
                 pagination={{
                     "clickable": true
@@ -49,10 +49,24 @@ const HeroSilde = () => {
                                 <img src={sildeItem.images.png} alt="" />
                             </div>
                             <h1 className="title" data-swiper-parallax="-300">{sildeItem.name}</h1>
-                            <div className="subtitle" data-swiper-parallax="-200">Subtitle</div>
                             <div className="text" data-swiper-parallax="-100">
                                 <p className='description'>{sildeItem.description}</p>
+                                <div className='lineBottom'>
+
+                                </div>
                             </div>
+                            <div className='destination__info'>
+                                <div className="avg" >
+                                    <h5>avg. distance</h5>
+                                    <h4>{sildeItem.distance}</h4>
+                                </div>
+                                <div className="est" >
+                                    <h5>est. travel time</h5>
+                                    <h4>{sildeItem.travel}</h4>
+                                </div>
+                            </div>
+
+
                         </SwiperSlide>
                     ))
                 }

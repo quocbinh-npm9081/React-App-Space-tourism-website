@@ -9,14 +9,13 @@ body.bg-destination {
 
 .destination {
     overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    text-align: center;
     .swiper-button-next,
     .swiper-button-prev {
         display: none !important;
     }
     .swiper-pagination {
-        bottom: 50%;
+        top: 33%;
     }
     .swiper-pagination-bullet {
         color: $text-color;
@@ -29,6 +28,7 @@ body.bg-destination {
         border-radius: unset !important;
         background-color: transparent;
         opacity: unset;
+        text-transform: uppercase;
     }
     img {
         width: 100%;
@@ -40,14 +40,38 @@ body.bg-destination {
     }
     .swiper-slide-active {
         &>.image>img {
-            transform: scale(1);
+            transform: scale(1) !important;
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .title {
+            transition-delay: 1.2s !important;
+        }
+        .text {
+            height: 10.1rem;
+            transition-delay: 1.8s !important;
+        }
+        .avg {
+            transition-delay: 2.5s !important;
+        }
+        .est {
+            transition-delay: 3.1s !important;
         }
     }
-    .pharse,
     .title,
-    .text {
+    .text,
+    .avg,
+    .est {
         color: $text-color;
         text-align: center;
+        opacity: 0 !important;
+        transform: translateY(-100%) !important;
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
     .title {
         font-weight: 100;
@@ -56,7 +80,9 @@ body.bg-destination {
         font-size: 8rem !important;
     }
     .pharse {
+        color: $text-color;
         margin: 2.4rem;
+        text-transform: uppercase;
         span {
             color: $pale-gray-color;
             text-transform: uppercase;
@@ -71,6 +97,13 @@ body.bg-destination {
     }
     .text {
         text-align: center;
+        .lineBottom {
+            bottom: 0;
+            width: 80%;
+            height: 0.02rem;
+            background-color: $pale-gray-color;
+            margin: 1rem auto;
+        }
     }
     .description {
         display: inline-block;
@@ -80,26 +113,201 @@ body.bg-destination {
         text-align: center;
         text-transform: none;
         max-width: 32.5rem;
+        height: 10.1rem;
     }
     .image {
         width: 17rem;
         margin: 0 auto;
     }
+    .avg {
+        margin: 2rem 0;
+        text-transform: uppercase;
+        color: $text-color;
+        line-height: 2.8rem;
+        h5 {
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+        h4 {
+            font-size: 2rem;
+            font-weight: 100;
+        }
+    }
+    .est {
+        color: $text-color;
+        text-transform: uppercase;
+        line-height: 2.8rem;
+        h5 {
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+        h4 {
+            font-size: 2rem;
+            font-weight: 100;
+        }
+    }
 }
 
 @include tablet {
     body.bg-destination {
-        background-image: url("../../public/assets/destination/background-destination-tablet.jpg");
+        background-image: url("/assets/destination/background-destination-tablet.jpg");
         background-size: cover;
         background-repeat: inherit;
         width: 100vw;
         height: 100vh;
     }
+    .destination {
+        overflow: hidden;
+        text-align: start;
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none !important;
+        }
+        .swiper-pagination {
+            top: 44%;
+        }
+        .swiper-pagination-bullet {
+            color: $text-color;
+            font-size: 1.8rem;
+            font-weight: 100;
+            padding: 0.8rem;
+            width: auto;
+            height: auto;
+            display: inline-block;
+            border-radius: unset !important;
+            background-color: transparent;
+            opacity: unset;
+            text-transform: uppercase;
+        }
+        img {
+            width: 100%;
+            transform: scale(0);
+            transition: all 2.88s ease;
+        }
+        .swiper-pagination-bullet-active {
+            border-bottom: 0.2rem solid #ffff;
+        }
+        .swiper-slide-active {
+            &>.image>img {
+                transform: scale(1) !important;
+            }
+            .title,
+            .text,
+            .avg,
+            .est {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            .title {
+                transition-delay: 1.2s !important;
+            }
+            .text {
+                height: 10.1rem;
+                transition-delay: 1.8s !important;
+            }
+            .avg {
+                transition-delay: 2.5s !important;
+            }
+            .est {
+                transition-delay: 3.1s !important;
+            }
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            color: $text-color;
+            text-align: center;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .title {
+            font-weight: 100;
+            margin-top: 8.4rem;
+            text-transform: uppercase;
+            font-size: 8rem !important;
+        }
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            span {
+                color: $pale-gray-color;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        .text {
+            text-align: center;
+            .lineBottom {
+                bottom: 0;
+                width: 80%;
+                height: 0.02rem;
+                background-color: $pale-gray-color;
+                margin: 1rem auto;
+                opacity: 0.25;
+            }
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            text-align: center;
+            text-transform: none;
+            max-width: 47.5rem;
+            height: 10.1rem;
+        }
+        .image {
+            width: 30.4rem;
+            margin: 0 auto;
+        }
+        &__info {
+            @include flex(center,
+            center);
+            .est {
+                color: $text-color;
+                padding: 0 6rem;
+                text-transform: uppercase;
+                line-height: 4rem;
+                h5 {
+                    font-size: 2.2rem;
+                    font-weight: 100;
+                }
+                h4 {
+                    font-size: 3rem;
+                    font-weight: 100;
+                }
+            }
+            .avg {
+                padding: 0 6rem;
+                margin: 2rem 0;
+                text-transform: uppercase;
+                color: $text-color;
+                line-height: 4rem;
+                h5 {
+                    font-size: 2.2rem;
+                    font-weight: 100;
+                }
+                h4 {
+                    font-size: 3rem;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
 }
 
 @include desktopMd {
     body.bg-destination {
-        background-image: url("../../public/assets/destination/background-destination-desktop.jpg");
+        background-image: url("/assets/destination/background-destination-desktop.jpg");
         background-size: cover;
         background-repeat: inherit;
         width: 100vw;

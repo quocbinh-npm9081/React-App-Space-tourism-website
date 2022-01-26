@@ -1,6 +1,6 @@
 @use "../../scss/index.scss" as *;
 body {
-    background-image: url("../../public/assets/home/background-home-mobile.jpg");
+    background-image: url("/assets/home/background-home-mobile.jpg");
     background-size: cover;
     background-repeat: inherit;
     width: 100vw;
@@ -66,7 +66,7 @@ body {
 
 @include tablet {
     body {
-        background-image: url("../../public/assets/home/background-home-tablet.jpg");
+        background-image: url("/assets/home/background-home-tablet.jpg");
         background-size: cover;
         background-repeat: inherit;
         width: 100vw;
@@ -112,7 +112,7 @@ body {
 
 @include desktopMd {
     body {
-        background-image: url("../../public/assets/home/background-home-desktop.jpg");
+        background-image: url("/assets/home/background-home-desktop.jpg");
         background-size: cover;
         background-repeat: inherit;
         width: 100vw;
