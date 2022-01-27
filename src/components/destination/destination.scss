@@ -313,4 +313,166 @@ body.bg-destination {
         width: 100vw;
         height: 100vh;
     }
+    .destination {
+        overflow: hidden;
+        text-align: start;
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none !important;
+        }
+        .swiper-slide {
+            display: flex !important;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition-property: transform;
+        }
+        .swiper-pagination {
+            top: 0;
+            margin-left: 19%;
+        }
+        .swiper-pagination-bullet {
+            color: $text-color;
+            font-size: 1.8rem;
+            font-weight: 100;
+            padding: 0.8rem;
+            width: auto;
+            height: auto;
+            display: inline-block;
+            border-radius: unset !important;
+            background-color: transparent;
+            opacity: unset;
+            text-transform: uppercase;
+        }
+        img {
+            width: 100%;
+            transform: scale(0);
+            transition: all 2.88s ease;
+        }
+        .swiper-pagination-bullet-active {
+            border-bottom: 0.2rem solid #ffff;
+        }
+        .swiper-slide-active {
+            &>.image>img {
+                transform: scale(1) !important;
+            }
+            .title,
+            .text,
+            .avg,
+            .est {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            .title {
+                transition-delay: 1.2s !important;
+            }
+            .text {
+                height: 10.1rem;
+                transition-delay: 1.8s !important;
+            }
+            .avg {
+                transition-delay: 2.5s !important;
+            }
+            .est {
+                transition-delay: 3.1s !important;
+            }
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            color: $text-color;
+            text-align: start;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .title {
+            font-weight: 100;
+            margin-top: 6.8rem;
+            text-transform: uppercase;
+            font-size: 8rem !important;
+        }
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            span {
+                color: $pale-gray-color;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        .text {
+            text-align: left;
+            .lineBottom {
+                bottom: 0;
+                width: 50%;
+                height: 0.02rem;
+                background-color: $pale-gray-color;
+                margin: 2rem 0;
+                opacity: 0.25;
+            }
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            text-align: start;
+            text-transform: none;
+            max-width: 30.5rem;
+            height: 10.1rem;
+        }
+        .image {
+            width: 26%;
+            margin: 0 auto;
+            flex-basis: 30%;
+        }
+        &__content {
+            flex-basis: 40%;
+        }
+        &__info {
+            @include flex(center,
+            flex-start);
+            padding-top: 2rem;
+            .est {
+                color: $text-color;
+                padding: 1rem 0rem;
+                margin-left: 4rem;
+                text-transform: uppercase;
+                line-height: 4rem;
+                h5 {
+                    font-size: 2.2rem;
+                    font-weight: 100;
+                }
+                h4 {
+                    font-size: 3rem;
+                    font-weight: 100;
+                }
+            }
+            .avg {
+                padding: 1rem 0rem;
+                margin: 2rem 0;
+                text-transform: uppercase;
+                color: $text-color;
+                line-height: 4rem;
+                h5 {
+                    font-size: 2.2rem;
+                    font-weight: 100;
+                }
+                h4 {
+                    font-size: 3rem;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
 }
