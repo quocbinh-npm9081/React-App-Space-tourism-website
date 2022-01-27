@@ -1,5 +1,9 @@
-import React, { useEffect } from 'react';
-import './crew.scss'
+import React, { useState, useEffect } from 'react';
+// Import Swiper React components
+
+import data from '../../config/data.json';
+
+import HeroSlide from '../heroSlide/HeroSlide';
 function Crew() {
     useEffect(() => {
         document.body.classList.add("bg-crew");
@@ -7,7 +11,16 @@ function Crew() {
             document.body.classList.remove("bg-crew");
         };
     }, []);
-    return <div>Crew</div>;
+    return (
+        <div>
+            <div className='destination'>
+                <h5 className='pharse'>
+                    <span>02</span> meet your crew
+                </h5>
+                <HeroSlide data={data.crew} page="crew" />
+            </div>
+        </div>
+    )
 }
 
 export default Crew;
