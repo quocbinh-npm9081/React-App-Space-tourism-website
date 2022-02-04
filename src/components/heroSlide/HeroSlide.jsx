@@ -20,7 +20,6 @@ const HeroSilde = ({ data, page }) => {
             const itemSlideArray = Array.from(itemSlidesInDOM);
             slides.map((item, index) => itemSlideArray[index].innerHTML = item.name)
         }
-
     })
 
     SwiperCore.use([Parallax, Pagination, Navigation]);

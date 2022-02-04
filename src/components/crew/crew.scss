@@ -57,11 +57,10 @@ body.bg-crew {
     .swiper-slide-active {
         &>.image>img {
             transform: scale(1) !important;
+            transition-delay: 1.9s !important;
         }
         .title,
-        .text,
-        .avg,
-        .est {
+        .text {
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
@@ -143,6 +142,13 @@ body.bg-crew {
         height: 100vh;
     }
     .crew {
+        &__content {
+            margin-top: 5rem;
+            .role {
+                text-align: center;
+                margin-top: 3rem;
+            }
+        }
         overflow: hidden;
         text-align: start;
         .swiper-button-next,
@@ -150,37 +156,40 @@ body.bg-crew {
             display: none !important;
         }
         .swiper-pagination {
-            top: 44%;
+            top: 40%;
         }
         .swiper-pagination-bullet {
-            color: $text-color;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 100;
             padding: 0.8rem;
-            width: auto;
-            height: auto;
+            width: 0.1rem;
+            height: 0.1rem;
             display: inline-block;
-            border-radius: unset !important;
-            background-color: transparent;
-            opacity: unset;
-            text-transform: uppercase;
+            border-radius: 50% !important;
+            background-color: $text-color;
+            margin: 0 1rem !important;
+            cursor: pointer;
         }
         img {
-            width: 100%;
+            height: 40vh;
+            width: 40vw;
             transform: scale(0);
-            transition: all 2.88s ease;
+            transition: all 1.22s ease;
         }
         .swiper-pagination-bullet-active {
             border-bottom: 0.2rem solid #ffff;
         }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column-reverse;
+        }
         .swiper-slide-active {
             &>.image>img {
                 transform: scale(1) !important;
+                transition-delay: 1.9s !important;
             }
             .title,
-            .text,
-            .avg,
-            .est {
+            .text {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
@@ -191,17 +200,9 @@ body.bg-crew {
                 height: 10.1rem;
                 transition-delay: 1.8s !important;
             }
-            .avg {
-                transition-delay: 2.5s !important;
-            }
-            .est {
-                transition-delay: 3.1s !important;
-            }
         }
         .title,
-        .text,
-        .avg,
-        .est {
+        .text {
             color: $text-color;
             text-align: center;
             opacity: 0 !important;
@@ -210,9 +211,12 @@ body.bg-crew {
         }
         .title {
             font-weight: 100;
-            margin-top: 8.4rem;
+            margin-top: 0;
             text-transform: uppercase;
-            font-size: 8rem !important;
+            font-size: 4rem !important;
+        }
+        .lineBottom {
+            display: none !important;
         }
         .pharse {
             color: $text-color;
@@ -232,28 +236,21 @@ body.bg-crew {
         }
         .text {
             text-align: center;
-            .lineBottom {
-                bottom: 0;
-                width: 80%;
-                height: 0.02rem;
-                background-color: $pale-gray-color;
-                margin: 1rem auto;
-                opacity: 0.25;
-            }
         }
         .description {
             display: inline-block;
             font-weight: 100;
-            font-size: 1.8rem;
-            line-height: 2.5rem;
+            font-size: 2rem;
+            line-height: 3rem;
             text-align: center;
             text-transform: none;
             max-width: 47.5rem;
-            height: 10.1rem;
+            height: 20.1rem;
+            letter-spacing: 0.136rem;
         }
         .image {
             width: 30.4rem;
-            margin: 0 auto;
+            margin-top: 20%;
         }
     }
 }
