@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// Import Swiper React components
+import './crew.scss'
+
 
 import data from '../../config/data.json';
-
 import HeroSlide from '../heroSlide/HeroSlide';
 function Crew() {
     useEffect(() => {
@@ -13,7 +13,7 @@ function Crew() {
     }, []);
     return (
         <div>
-            <div className='destination'>
+            <div className='crew'>
                 <h5 className='pharse'>
                     <span>02</span> meet your crew
                 </h5>

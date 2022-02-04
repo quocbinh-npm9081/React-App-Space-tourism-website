@@ -7,33 +7,384 @@ body.bg-crew {
     height: 100vh;
 }
 
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
+.crew {
+    overflow: hidden;
     text-align: center;
-    font-size: 18px;
-    background: #fff;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    .swiper-pagination {
+        top: 42%;
+    }
+    .swiper-pagination-bullet {
+        font-size: 1.4rem;
+        font-weight: 100;
+        padding: 0.8rem;
+        width: 0.2rem;
+        height: 0.2rem;
+        display: inline-block;
+        border-radius: 50% !important;
+        background-color: $text-color;
+        margin: 0 1rem !important;
+        cursor: pointer;
+    }
+    .pharse {
+        color: $text-color;
+        margin: 3rem 0;
+        text-transform: uppercase;
+        span {
+            color: $pale-gray-color;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-right: 1.53rem;
+            opacity: 0.25;
+        }
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.27rem;
+    }
+    img {
+        height: 23rem;
+        width: 100%;
+        transform: scale(0);
+        transition: all 1s ease;
+    }
+    .swiper-pagination-bullet-active {
+        border-bottom: 0.2rem solid #ffff;
+    }
+    .swiper-slide-active {
+        &>.image>img {
+            transform: scale(1) !important;
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .title {
+            transition-delay: 1.2s !important;
+        }
+        .text {
+            height: 10.1rem;
+            transition-delay: 1.8s !important;
+        }
+    }
+    &__content {
+        margin-top: 8.4rem;
+        .title,
+        .text,
+        .avg,
+        .est {
+            color: $text-color;
+            text-align: center;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .role {
+            font-weight: 100;
+            margin-top: 20%;
+            text-transform: uppercase;
+            font-size: 2rem !important;
+            color: $pale-gray-color;
+            opacity: 0.5;
+        }
+        .title {
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 3rem !important;
+            padding: 2rem 0;
+        }
+        .text {
+            text-align: center;
+            padding-top: 2rem;
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 2rem;
+            line-height: 3rem;
+            text-align: center;
+            text-transform: none;
+            max-width: 32.5rem;
+            height: 20.1rem;
+            // overflow: hidden;
+            // // white-space: nowrap;
+            // text-overflow: ellipsis;
+        }
+    }
+    .image {
+        position: relative;
+        width: 17rem;
+        margin: 0 auto;
+    }
+    .lineBottom {
+        position: absolute;
+        width: 80%;
+        top: 23rem;
+        left: 4rem;
+        height: 0.02rem;
+        background-color: $pale-gray-color;
+        margin: 0 auto;
+        opacity: 0.2;
+    }
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@include tablet {
+    body.bg-crew {
+        background-image: url("/assets/crew/background-crew-tablet.jpg");
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+    }
+    .crew {
+        overflow: hidden;
+        text-align: start;
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none !important;
+        }
+        .swiper-pagination {
+            top: 44%;
+        }
+        .swiper-pagination-bullet {
+            color: $text-color;
+            font-size: 1.8rem;
+            font-weight: 100;
+            padding: 0.8rem;
+            width: auto;
+            height: auto;
+            display: inline-block;
+            border-radius: unset !important;
+            background-color: transparent;
+            opacity: unset;
+            text-transform: uppercase;
+        }
+        img {
+            width: 100%;
+            transform: scale(0);
+            transition: all 2.88s ease;
+        }
+        .swiper-pagination-bullet-active {
+            border-bottom: 0.2rem solid #ffff;
+        }
+        .swiper-slide-active {
+            &>.image>img {
+                transform: scale(1) !important;
+            }
+            .title,
+            .text,
+            .avg,
+            .est {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            .title {
+                transition-delay: 1.2s !important;
+            }
+            .text {
+                height: 10.1rem;
+                transition-delay: 1.8s !important;
+            }
+            .avg {
+                transition-delay: 2.5s !important;
+            }
+            .est {
+                transition-delay: 3.1s !important;
+            }
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            color: $text-color;
+            text-align: center;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .title {
+            font-weight: 100;
+            margin-top: 8.4rem;
+            text-transform: uppercase;
+            font-size: 8rem !important;
+        }
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            span {
+                color: $pale-gray-color;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        .text {
+            text-align: center;
+            .lineBottom {
+                bottom: 0;
+                width: 80%;
+                height: 0.02rem;
+                background-color: $pale-gray-color;
+                margin: 1rem auto;
+                opacity: 0.25;
+            }
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            text-align: center;
+            text-transform: none;
+            max-width: 47.5rem;
+            height: 10.1rem;
+        }
+        .image {
+            width: 30.4rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include desktopMd {
+    body.bg-crew {
+        background-image: url("/assets/crew/background-crew-desktop.jpg");
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+    }
+    .crew {
+        overflow: hidden;
+        text-align: start;
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none !important;
+        }
+        .swiper-slide {
+            display: flex !important;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition-property: transform;
+        }
+        .swiper-pagination {
+            top: 0;
+            margin-left: 19%;
+        }
+        .swiper-pagination-bullet {
+            color: $text-color;
+            font-size: 1.8rem;
+            font-weight: 100;
+            padding: 0.8rem;
+            width: auto;
+            height: auto;
+            display: inline-block;
+            border-radius: unset !important;
+            background-color: transparent;
+            opacity: unset;
+            text-transform: uppercase;
+        }
+        img {
+            width: 100%;
+            transform: scale(0);
+            transition: all 2.88s ease;
+        }
+        .swiper-pagination-bullet-active {
+            border-bottom: 0.2rem solid #ffff;
+        }
+        .swiper-slide-active {
+            &>.image>img {
+                transform: scale(1) !important;
+            }
+            .title,
+            .text,
+            .avg,
+            .est {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            .title {
+                transition-delay: 1.2s !important;
+            }
+            .text {
+                height: 10.1rem;
+                transition-delay: 1.8s !important;
+            }
+        }
+        .title,
+        .text,
+        .avg,
+        .est {
+            color: $text-color;
+            text-align: start;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .title {
+            font-weight: 100;
+            margin-top: 6.8rem;
+            text-transform: uppercase;
+            font-size: 8rem !important;
+        }
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            span {
+                color: $pale-gray-color;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        .text {
+            text-align: left;
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            text-align: start;
+            text-transform: none;
+            max-width: 30.5rem;
+            height: 10.1rem;
+        }
+        .image {
+            width: 26%;
+            margin: 0 auto;
+            flex-basis: 30%;
+            .lineBottom {
+                bottom: 0;
+                width: 50%;
+                height: 0.02rem;
+                background-color: $pale-gray-color;
+                margin: 2rem 0;
+                opacity: 0.25;
+            }
+        }
+        &__content {
+            flex-basis: 40%;
+        }
+    }
 }

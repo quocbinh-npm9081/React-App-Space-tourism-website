@@ -82,16 +82,18 @@ const HeroSilde = ({ data, page }) => {
                                 <SwiperSlide key={index}>
                                     <div className='image'>
                                         <img src={sildeItem.images.png} alt="" />
+
                                     </div>
-                                    <div className="destination__content">
+                                    <div className='lineBottom'>
+
+                                    </div>
+                                    <div className="crew__content">
                                         <h1 className="role" data-swiper-parallax="-300">{sildeItem.role}</h1>
 
                                         <h1 className="title" data-swiper-parallax="-300">{sildeItem.name}</h1>
                                         <div className="text" data-swiper-parallax="-100">
                                             <p className='description'>{sildeItem.bio}</p>
-                                            <div className='lineBottom'>
 
-                                            </div>
                                         </div>
 
 
