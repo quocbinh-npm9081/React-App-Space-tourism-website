@@ -59,10 +59,17 @@ body.bg-crew {
             transform: scale(1) !important;
             transition-delay: 1.9s !important;
         }
+        .role {
+            opacity: 0.5 !important;
+            transform: translateY(0) !important;
+        }
         .title,
         .text {
             opacity: 1 !important;
             transform: translateY(0) !important;
+        }
+        .role {
+            transition-delay: 0.8s !important;
         }
         .title {
             transition-delay: 1.2s !important;
@@ -75,9 +82,7 @@ body.bg-crew {
     &__content {
         margin-top: 8.4rem;
         .title,
-        .text,
-        .avg,
-        .est {
+        .text {
             color: $text-color;
             text-align: center;
             opacity: 0 !important;
@@ -90,7 +95,10 @@ body.bg-crew {
             text-transform: uppercase;
             font-size: 2rem !important;
             color: $pale-gray-color;
-            opacity: 0.5;
+            opacity: 0 !important;
+            transform: translateY(-100%) !important;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            // opacity: 0.5;
         }
         .title {
             font-weight: 100;
@@ -135,7 +143,7 @@ body.bg-crew {
 
 @include tablet {
     body.bg-crew {
-        background-image: url("/assets/crew/background-crew-tablet.jpg");
+        background-image: url("/assets/crew/background-crew-tablet.jpg") !important;
         background-size: cover;
         background-repeat: inherit;
         width: 100vw;
@@ -187,6 +195,10 @@ body.bg-crew {
             &>.image>img {
                 transform: scale(1) !important;
                 transition-delay: 1.9s !important;
+            }
+            .role {
+                opacity: 0.5 !important;
+                transform: translateY(0) !important;
             }
             .title,
             .text {
@@ -257,60 +269,73 @@ body.bg-crew {
 
 @include desktopMd {
     body.bg-crew {
-        background-image: url("/assets/crew/background-crew-desktop.jpg");
-        background-size: cover;
+        background-image: url("/assets/crew/background-crew-desktop.jpg") !important;
+        background-size: auto !important;
         background-repeat: inherit;
         width: 100vw;
         height: 100vh;
+        overflow-x: hidden;
     }
     .crew {
+        &__content {
+            margin-top: 10rem;
+            flex-basis: 50%;
+            padding-left: 8.4rem;
+            .role {
+                text-align: start;
+                margin-top: 3rem;
+            }
+        }
         overflow: hidden;
         text-align: start;
         .swiper-button-next,
         .swiper-button-prev {
             display: none !important;
         }
-        .swiper-slide {
-            display: flex !important;
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transition-property: transform;
-        }
         .swiper-pagination {
-            top: 0;
-            margin-left: 19%;
+            top: 80%;
+            width: unset;
+            margin-left: 8.4rem;
         }
         .swiper-pagination-bullet {
-            color: $text-color;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 100;
             padding: 0.8rem;
-            width: auto;
-            height: auto;
+            width: 0.1rem;
+            height: 0.1rem;
             display: inline-block;
-            border-radius: unset !important;
-            background-color: transparent;
-            opacity: unset;
-            text-transform: uppercase;
+            border-radius: 50% !important;
+            background-color: $text-color;
+            margin: 0 1rem !important;
+            cursor: pointer;
         }
         img {
-            width: 100%;
+            height: unset;
+            max-width: 100%;
             transform: scale(0);
-            transition: all 2.88s ease;
+            transition: all 1.22s ease;
         }
         .swiper-pagination-bullet-active {
             border-bottom: 0.2rem solid #ffff;
         }
+        .swiper-slide {
+            display: flex;
+            flex-direction: row-reverse;
+            height: 100vh;
+            justify-content: center;
+            text-align: center;
+        }
         .swiper-slide-active {
             &>.image>img {
                 transform: scale(1) !important;
+                transition-delay: 1.9s !important;
+            }
+            .role {
+                opacity: 0.5 !important;
+                transform: translateY(0) !important;
             }
             .title,
-            .text,
-            .avg,
-            .est {
+            .text {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
@@ -323,9 +348,7 @@ body.bg-crew {
             }
         }
         .title,
-        .text,
-        .avg,
-        .est {
+        .text {
             color: $text-color;
             text-align: start;
             opacity: 0 !important;
@@ -334,9 +357,12 @@ body.bg-crew {
         }
         .title {
             font-weight: 100;
-            margin-top: 6.8rem;
+            margin-top: 0;
             text-transform: uppercase;
-            font-size: 8rem !important;
+            font-size: 4rem !important;
+        }
+        .lineBottom {
+            display: none !important;
         }
         .pharse {
             color: $text-color;
@@ -355,33 +381,26 @@ body.bg-crew {
             letter-spacing: 0.27rem;
         }
         .text {
-            text-align: left;
+            text-align: start;
         }
         .description {
             display: inline-block;
             font-weight: 100;
-            font-size: 1.8rem;
-            line-height: 2.5rem;
+            font-size: 2rem;
+            line-height: 3rem;
             text-align: start;
             text-transform: none;
-            max-width: 30.5rem;
-            height: 10.1rem;
+            max-width: 40.5rem;
+            height: 20.1rem;
+            letter-spacing: 0.136rem;
         }
         .image {
-            width: 26%;
+            width: unset;
+            display: flex;
+            margin-top: 0%;
             margin: 0 auto;
-            flex-basis: 30%;
-            .lineBottom {
-                bottom: 0;
-                width: 50%;
-                height: 0.02rem;
-                background-color: $pale-gray-color;
-                margin: 2rem 0;
-                opacity: 0.25;
-            }
-        }
-        &__content {
             flex-basis: 40%;
+            text-align: end;
         }
     }
 }

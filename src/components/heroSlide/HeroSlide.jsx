@@ -80,7 +80,7 @@ const HeroSilde = ({ data, page }) => {
                             slides.map((sildeItem, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='image'>
-                                        <img src={sildeItem.images.png} alt="" />
+                                        <img src={sildeItem.images.webp} alt="" />
 
                                     </div>
                                     <div className='lineBottom'>
