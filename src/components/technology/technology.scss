@@ -1,8 +1,151 @@
 @use "../../scss/index.scss" as *;
-body.bg-crew {
-    background-image: url("/assets/technology/background-technology-mobile.jpg");
+body.bg-technology {
+    background-image: url("/assets/technology/background-technology-mobile.jpg") !important;
     background-size: cover;
     background-repeat: inherit;
     width: 100vw;
     height: 100vh;
+}
+
+.technology {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    .swiper-pagination {
+        top: 40%;
+    }
+    .swiper-pagination-bullet {
+        font-size: 1.4rem;
+        font-weight: 400 !important;
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        border-radius: 50% !important;
+        margin: 0 1rem !important;
+        cursor: pointer;
+        text-align: center;
+        line-height: 4rem;
+        color: $pale-gray-color !important;
+        // &-active {
+        //     background-color: $text-color !important;
+        //     color: $dark-color !important;
+        // }
+        opacity: unset !important;
+        border: solid 0.1rem $pale-gray-color;
+    }
+    .swiper-pagination-bullet-active {
+        color: $dark-color !important;
+    }
+    .image {
+        width: 100%;
+        img {
+            max-width: 100%;
+        }
+    }
+    .pharse {
+        color: $text-color;
+        margin: 4.4rem auto;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        span {
+            color: $pale-gray-color;
+            font-weight: 700;
+            margin-right: 1.53rem;
+            opacity: 0.25;
+        }
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.27rem;
+    }
+    &_content {
+        color: $text-color;
+        margin-top: 8rem;
+        text-align: center;
+        .terminology {
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-weight: 100;
+            font-family: $font-primary;
+        }
+        .title {
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 3rem !important;
+            padding: 1rem 0;
+        }
+        .description {
+            display: inline-block;
+            font-weight: 100;
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            text-align: center;
+            text-transform: none;
+            max-width: 47.5rem;
+            height: 10.1rem;
+        }
+    }
+}
+
+@include moblieSm {
+    .swiper-pagination {
+        top: 36% !important;
+    }
+}
+
+@include desktopMd {
+    body.bg-technology {
+        background-image: url("/assets/technology/background-technology-desktop.jpg") !important;
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        height: 100%;
+    }
+    .technology {
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            text-transform: uppercase;
+            span {
+                color: $pale-gray-color;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        &_content {
+            color: $text-color;
+            .terminology {
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 100;
+                font-family: $font-primary;
+            }
+            .title {
+                font-weight: 100;
+                text-transform: uppercase;
+                font-size: 5rem !important;
+            }
+            .description {
+                display: inline-block;
+                font-weight: 100;
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                text-align: center;
+                text-transform: none;
+                max-width: 47.5rem;
+                height: 10.1rem;
+                margin-top: 2rem;
+            }
+        }
+    }
 }

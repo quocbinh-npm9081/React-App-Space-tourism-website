@@ -11,7 +11,7 @@ const Routes_S = () => {
             <Route path="/crew" element={<Crew />}></Route>
             <Route path="/technology" element={<Technology />}></Route>
             {/* <Route path="/" element={<HomePage />}></Route> */}
-            <Route path="/" element={<HomePage />}></Route>
+            <Route exact path="/" element={<HomePage />}></Route>
         </Routes>
     )
 

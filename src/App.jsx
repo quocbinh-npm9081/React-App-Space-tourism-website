@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes_S from './config/routers/Routes_S';
 import './App.scss';
+import "swiper/css/bundle";
 
 
 import Header from './components/header/Header';

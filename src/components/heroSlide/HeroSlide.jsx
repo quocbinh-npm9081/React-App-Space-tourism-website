@@ -9,10 +9,23 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 
 const HeroSilde = ({ data, page }) => {
+    SwiperCore.use([Parallax, Pagination, Navigation]);
 
 
     const [slides, setSlides] = useState([]);
 
+    const [portrait, setPortrait] = useState(false);
+
+    const desktopResizeTechnologyPage = () => {
+
+        if (window.innerWidth >= 1023) {
+            setPortrait(true)
+        } else {
+            setPortrait(false)
+        }
+
+    }
+    console.log(portrait);
     useEffect(() => {
         setSlides(data);
         if (page === 'destination') {
@@ -20,13 +33,22 @@ const HeroSilde = ({ data, page }) => {
             const itemSlideArray = Array.from(itemSlidesInDOM);
             slides.map((item, index) => itemSlideArray[index].innerHTML = item.name)
         }
-    })
 
-    SwiperCore.use([Parallax, Pagination, Navigation]);
-    return (
-        <div className="hero-slide">
-            {
-                page === 'destination' ? (
+        if (page === 'technology') {
+            const itemSlidesInDOM = document.querySelectorAll(".swiper-pagination-bullet");
+            const itemSlideArray = Array.from(itemSlidesInDOM);
+            slides.map((item, index) => itemSlideArray[index].innerHTML = ++index)
+        }
+        window.addEventListener('resize', desktopResizeTechnologyPage);
+        return () => {
+            window.removeEventListener('rezise', desktopResizeTechnologyPage);
+        }
+
+    })
+    const renderSilde = (actualPage) => {
+        switch (actualPage) {
+            case "destination":
+                return (
                     <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
                         speed={240}
                         parallax={true}
@@ -66,7 +88,11 @@ const HeroSilde = ({ data, page }) => {
                                 </SwiperSlide>
                             ))
                         }
-                    </Swiper>) : (
+                    </Swiper>
+                )
+                break;
+            case "crew":
+                return (
                     <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
                         speed={240}
                         parallax={true}
@@ -104,9 +130,46 @@ const HeroSilde = ({ data, page }) => {
                         }
                     </Swiper>
                 )
+                break;
+            case "technology":
+                return (
+                    <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
+                        speed={240}
+                        parallax={true}
+                        pagination={{
+                            "clickable": true
+                        }}
+                        navigation={true}
+                        className="mySwiper">
+                        {
+                            slides.map((item, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="image">
+                                        <img src={portrait ? item.images.portrait : item.images.landscape} alt="" />
+                                    </div>
+                                    <div className="technology_content">
+                                        <h3 className="terminology" data-swiper-parallax="-300">The terminology...</h3>
+                                        <h1 className="title" data-swiper-parallax="-300">{item.name}</h1>
+                                        <div className="text" data-swiper-parallax="-100">
+                                            <p className='description'>{item.description}</p>
+                                        </div>
+                                    </div>
+
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                )
+            default:
+                return null;
+                break;
+        }
+    }
+    return (
+        <div className="hero-slide">
+            {
+                renderSilde(page)
             }
-
-
         </div>
     );
 }
