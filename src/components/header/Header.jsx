@@ -53,6 +53,7 @@ function Header() {
                         >
 
                             <Link to={li.path}
+                                onClick={handleToggle}
                                 className={itemNavActive === index ? 'active' : ''}
                             >  <span>0{index}</span>{li.display}</Link>
                         </li>

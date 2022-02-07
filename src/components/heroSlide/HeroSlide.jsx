@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
+import Slidedesktop from './technologySilde/SlideDesktop';
 const HeroSilde = ({ data, page }) => {
     SwiperCore.use([Parallax, Pagination, Navigation]);
 
@@ -25,7 +26,7 @@ const HeroSilde = ({ data, page }) => {
         }
 
     }
-    console.log(portrait);
+    // console.log(portrait);
     useEffect(() => {
         setSlides(data);
         if (page === 'destination') {
@@ -39,12 +40,21 @@ const HeroSilde = ({ data, page }) => {
             const itemSlideArray = Array.from(itemSlidesInDOM);
             slides.map((item, index) => itemSlideArray[index].innerHTML = ++index)
         }
+        if (window.innerWidth >= 1023) {
+            setPortrait(true)
+        } else {
+            setPortrait(false)
+        }
         window.addEventListener('resize', desktopResizeTechnologyPage);
         return () => {
             window.removeEventListener('rezise', desktopResizeTechnologyPage);
         }
 
     })
+
+
+
+
     const renderSilde = (actualPage) => {
         switch (actualPage) {
             case "destination":
@@ -133,7 +143,8 @@ const HeroSilde = ({ data, page }) => {
                 break;
             case "technology":
                 return (
-                    <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
+
+                    portrait === false ? <Swiper style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
                         speed={240}
                         parallax={true}
                         pagination={{
@@ -145,7 +156,7 @@ const HeroSilde = ({ data, page }) => {
                             slides.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="image">
-                                        <img src={portrait ? item.images.portrait : item.images.landscape} alt="" />
+                                        <img src={item.images.landscape} alt="" />
                                     </div>
                                     <div className="technology_content">
                                         <h3 className="terminology" data-swiper-parallax="-300">The terminology...</h3>
@@ -158,7 +169,9 @@ const HeroSilde = ({ data, page }) => {
                                 </SwiperSlide>
                             ))
                         }
-                    </Swiper>
+                    </Swiper> :
+                        <Slidedesktop slides={slides} />
+
                 )
             default:
                 return null;

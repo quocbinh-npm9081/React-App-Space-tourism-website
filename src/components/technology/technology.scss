@@ -62,13 +62,14 @@ body.bg-technology {
     }
     &_content {
         color: $text-color;
-        margin-top: 8rem;
+        margin-top: 12rem;
         text-align: center;
         .terminology {
             text-transform: uppercase;
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 100;
             font-family: $font-primary;
+            color: $pale-gray-color;
         }
         .title {
             font-weight: 100;
@@ -83,8 +84,8 @@ body.bg-technology {
             line-height: 2.8rem;
             text-align: center;
             text-transform: none;
-            max-width: 47.5rem;
-            height: 10.1rem;
+            max-width: 30.5rem;
+            height: 20.1rem;
         }
     }
 }
@@ -95,7 +96,13 @@ body.bg-technology {
     }
 }
 
-@include desktopMd {
+@include iphone_6_7_8 {
+    .swiper-pagination {
+        top: 36.5% !important;
+    }
+}
+
+@include tablet {
     body.bg-technology {
         background-image: url("/assets/technology/background-technology-desktop.jpg") !important;
         background-size: cover;
@@ -106,7 +113,33 @@ body.bg-technology {
         height: 100%;
     }
     .technology {
+        .swiper-pagination {
+            top: 43%;
+        }
+        .swiper-pagination-bullet {
+            font-size: 2.4rem;
+            font-weight: 400 !important;
+            width: 6.4rem;
+            height: 6.4rem;
+            display: inline-block;
+            border-radius: 50% !important;
+            margin: 0 1rem !important;
+            cursor: pointer;
+            text-align: center;
+            line-height: 6.4rem;
+            color: $pale-gray-color !important;
+            // &-active {
+            //     background-color: $text-color !important;
+            //     color: $dark-color !important;
+            // }
+            opacity: unset !important;
+            border: solid 0.1rem $pale-gray-color;
+        }
+        .swiper-pagination-bullet-active {
+            color: $dark-color !important;
+        }
         .pharse {
+            text-align: start;
             color: $text-color;
             margin: 4.4rem;
             padding: 0 0 0 4rem;
@@ -123,7 +156,116 @@ body.bg-technology {
             letter-spacing: 0.27rem;
         }
         &_content {
+            padding-top: 8rem;
+            padding-bottom: 10rem;
             color: $text-color;
+            .terminology {
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 100;
+                font-family: $font-primary;
+                padding-bottom: 1rem;
+            }
+            .title {
+                font-weight: 100;
+                text-transform: uppercase;
+                font-size: 6rem !important;
+            }
+            .description {
+                display: inline-block;
+                font-weight: 100;
+                font-size: 2rem;
+                line-height: 3.5rem;
+                text-align: center;
+                text-transform: none;
+                max-width: 47.5rem;
+                height: unset !important;
+                margin-top: unset !important;
+            }
+        }
+    }
+}
+
+@include desktopMd {
+    body.bg-technology {
+        background-image: url("/assets/technology/background-technology-desktop.jpg") !important;
+        background-size: cover;
+        background-repeat: inherit;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .technology {
+        .swiper,
+        .swiper-slide {
+            height: 100%;
+        }
+        .swiper-slide {
+            display: block;
+            width: 100vh;
+            opacity: 0 !important;
+            @include flex(center,
+            center);
+            flex-direction: row-reverse;
+            &-active {
+                opacity: 1 !important;
+            }
+        }
+        .swiper-pagination {
+            top: 30%;
+        }
+        .swiper-pagination-bullet {
+            display: block !important;
+            font-size: 2.4rem;
+            font-weight: 400 !important;
+            width: 6.4rem;
+            height: 6.4rem;
+            display: inline-block;
+            border-radius: 50% !important;
+            margin: 1rem 6.4rem !important;
+            cursor: pointer;
+            text-align: center;
+            line-height: 6.4rem;
+            color: $pale-gray-color !important;
+            // &-active {
+            //     background-color: $text-color !important;
+            //     color: $dark-color !important;
+            // }
+            opacity: unset !important;
+            border: solid 0.1rem $pale-gray-color;
+        }
+        .swiper-pagination-bullet-active {
+            color: $dark-color !important;
+            background-color: $text-color;
+        }
+        .pharse {
+            color: $text-color;
+            margin: 4.4rem;
+            padding: 0 0 0 4rem;
+            text-transform: uppercase;
+            span {
+                color: $pale-gray-color;
+                font-weight: 700;
+                margin-right: 1.53rem;
+                opacity: 0.25;
+            }
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.27rem;
+        }
+        .image {
+            width: unset !important;
+        }
+        &_content {
+            flex-basis: 50%;
+            padding: 10rem;
+            color: $text-color;
+            text-align: start;
+            margin-top: unset !important;
             .terminology {
                 text-transform: uppercase;
                 font-size: 2rem;
@@ -136,15 +278,16 @@ body.bg-technology {
                 font-size: 5rem !important;
             }
             .description {
-                display: inline-block;
+                display: -webkit-box;
                 font-weight: 100;
                 font-size: 1.8rem;
                 line-height: 2.5rem;
-                text-align: center;
                 text-transform: none;
+                text-align: start;
                 max-width: 47.5rem;
-                height: 10.1rem;
                 margin-top: 2rem;
+                max-height: 10rem !important;
+                text-overflow: ellipsis;
             }
         }
     }
