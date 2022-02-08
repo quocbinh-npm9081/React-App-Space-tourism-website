@@ -17,7 +17,9 @@ function Header() {
 
     const handleToggle = () => {
         setHamburger(!hamburger);
-        setIsActive(!isActive);
+        if (window.innerWidth <= 768) {
+            setIsActive(!isActive);
+        }
     }
 
     const itemNavActive = dataHeader.findIndex(e => e.path === pathname);
